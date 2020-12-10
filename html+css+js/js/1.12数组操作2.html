@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //往数组里弹出元素--pop弹出最后一个
+        let array = ["fyh","hexx","zhangyu"];
+        let array1 = ["chenjin"];
+        let array2 = ["fyh","hexx","zhangyu"];
+        let a = array.pop();
+        console.log(a);
+        console.log(array);
+        
+        array2.shift();//从前面移出
+        console.log(array2);
+
+        array1.unshift("在头插入");
+        console.log(array1);
+
+        //splice，slice实现数组的增删改查
+        console.log(array.slice(1,2));//,"截取1到2的内容且不改变元素组"
+        
+    </script>
+</body>
+</html>

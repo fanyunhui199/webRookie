@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    要求：当输入字符长度小于5的时候报错并且自动忽视字符中的空格
+    <input type="text" name="password">
+    <script>
+        let ps = document.querySelector("[name='password']");
+        ps.addEventListener("keyup", function(){
+            this.value=this.value.trim();//去空格
+            let span=document.getElementsByTagName("span");
+            let error="";
+            if(this.value.length<5){
+                error ="密码不能小于5位！";
+            
+            }
+            span.innerHTML=error;
+        });
+
+
+        let a="abcdefghijklm";
+        console.log(a.slice(1,6));
+        console.log(a.substring(-1));//只能从0开始截取，不能从后往前
+        console.log(a.substr(-10,5));//substr的第二个参数的表示的是返回的字符的个数
+        
+
+        let b="abcdefghijklmx";
+        console.log(b.includes("b"));//Boolean类型
+        console.log(b.indexOf("a"));//输出位置，只能查到一个
+        console.log(b.lastIndexOf("b"));//从右边开始查找，但是好像不起作用????
+
+       let c= b.replace("ijklmx","这个老师讲的什么狗屁玩意儿");
+       console.log(c);
+       console.log(c.repeat(3));
+
+       document.write("利用string slice截断函数实现电话号码模糊处理"+"\n");
+       function mobile(number,len=3 ){
+           return String(number).slice(0,len*-1)+"*".repeat(len);
+       }
+       document.write(mobile(837334545454,3) );//Nubmer(string);
+
+
+       const d="abcdefg";
+       console.log(d.paseint)
+    </script>
+</body>
+</html>

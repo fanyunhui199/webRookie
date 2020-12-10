@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 利用dowhile输出三角形
+        function star(row){
+            let star = 1;
+            do{
+                let x = 1;
+                do{
+
+                    document.write("*");
+
+                }while(++ x <= star)
+
+                     document.write("<br/>");
+                     
+            }while(++star <= row )
+
+        }
+        star(prompt("输入行数"));
+
+    </script>
+</body>
+</html>

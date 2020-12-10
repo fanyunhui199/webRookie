@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1
+        let arry=["1何晓晓","2张瑜","3陈瑾","4王根源","5樊云慧"]
+        let index1 = Math.random();//[0,1)
+        console.log(index1);
+
+        //2取[0,4]
+        // let index2 = Math.floor.(Math.random()*(MAX+1));
+        let index2 = Math.floor(Math.random()*(4+1));
+        console.log(index2);
+
+        //3取[2,5],浮动数值为3
+        //Math.floor(2+Math.random()*(max+1-start));
+        let index3 = 2+Math.floor(Math.random()*(5+1-2));
+        console.log(index3);
+
+        //4在数组中随机取，长度范围为[0,4]
+        let index4 = Math.floor(Math.random()*(5));
+        console.log(arry[index4]);
+
+       
+        
+        //5封装成函数
+        function arrayRadom(array,start,end ){//这里的开始结束指的是下标
+            end = end ? end:arrar.length;
+
+            console.log(end);
+
+            let index = Math.floor(start+Math.random()*(end-start+1));//这里要把0 加上
+
+            return array[index];
+
+        }
+
+        console.log(arrayRadom(arry,0,4));
+
+
+        
+    </script>
+</body>
+</html>

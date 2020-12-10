@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a =["amncbab","fdkdhbf","shkbfdsf",2,3,5,6,7];//数组可以放对象
+        console.log(a.join("|"));
+        console.log(typeof a);//object-->引用类型
+
+        //多维数组操作
+        let b=["abc",["abcd","1234"],"efghkj"]
+        console.log(b[1][1]);
+
+        //通常在数组里存对象
+        let c =[{name:"fyh"},{name:"hexxx"},{name:"zy"}];
+        console.log(c[1].name);
+
+        //要想数组里只存一个内容，比如6，用array.of(),单纯的array是6个
+        let d = Array(6);
+        let e = Array.of(6);
+        console.table(d);
+        console.table(e);
+
+        //将对象转换成数组，array.from(对象名字，后续操作（可以省略）))
+        let f = "skjdfsdff";
+        console. log(Array.from(f).join("-"));
+
+        //1利用展开语法完成数组/字符串拼接
+        let g = ["abcds","efg","higk"];
+        let h =["123","456","789"];
+        h = [...g, ...h];
+        console.log(h);
+
+        //2 展开语法求和运算不确定传入的值的个数时，作为参数传入
+        //3 可以使用展开语法把div转换成string类型，对它进行操作[...div]
+        //...agr就是把那些东西全吸入了，在解构的时候释放
+        function sum(...args){
+                return ;
+        }
+        console.log(sum(1,2,3));
+
+        //解构赋值，把给对象赋值，...展开就是数组形式逗号
+        let [爸爸,儿子] = ["樊云慧","何晓晓"];
+        console.log(爸爸);
+        let [爸爸2,...儿子2] = ["樊云慧",["何晓晓","张瑜","陈瑾"]];
+        console.log(爸爸2);
+        console.log(儿子2);
+
+        
+
+        //往数组里添加元素的几种方法，推荐自带函数
+        console.table([爸爸,...儿子2]);
+        let array = ["abc",["def"]];
+        array.push("xyz","php");
+        console.log(array);
+
+        let array1 = ["abc","def"];
+        let array2 = ["xyz","php"];
+        array1.push(...array2);//直接操作原来数组，返回值为数组元素个数
+        console.table(array1)
+        
+
+        //slice和splice实现数组的增删改查
+        
+        
+        
+
+    </script>
+</body>
+</html>

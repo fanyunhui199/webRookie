@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- for of 和for in -->
+    <!-- for in 
+    1一般用于遍历对象的可枚举属性。以及对象从构造函数原型中继承的属性。对于每个不同的属性，语句都会被执行。
+    2 不建议使用for in 遍历数组，因为输出的顺序是不固定的。
+    如果迭代的对象的变量值是null或者undefined, for in不执行循环体，建议在使用for in循环之前，
+    先检查该对象的值是不是null或者undefined
+    
+    for of(处理值)
+    1 or of 不遍历method和name,适合用来遍历数组
+
+    那for of有缺点吗? 当然有了:
+   
+   for of不支持普通对象，想遍历对象的属性，可以用for in循环, 或内建的Object.keys()方法：
+   
+   Object.keys(myObject)获取对象的实例属性组成的数组，不包括原型方法和属性
+
+    通俗的讲：for in遍历的是数组的索引（及是key--键名）而for of 是数组的值 -->
+    <script>
+           let trytry=[6,5,4,3,2,1];
+        //    for (const key in object) {
+        //        if (object.hasOwnProperty(key)) {
+        //            const element = object[key];
+                   
+        //        }}
+          for (const y in trytry) {
+                 console.log(y);//此处的key是下标
+            }
+        
+            // for (const iterator of object) {
+                
+            // }
+
+            for (const x of trytry) {
+                console.log(x);
+            }
+
+            let people=[
+                {age:18,  name:"fanyunhui"},
+                {age:100, name:"choubaguai"},
+                {age:99,  name:"hezhuytou"}
+        ]
+
+        for (const key in people) {
+            document.write( people[key].age);//使用方式要搞明白，key相当于下标
+            document.write("</br>");
+        }
+          
+        document.write("</br>");
+        document.write("</br>");
+        for (const m of people) {//使用方式就是把people对象给了m,通过m去访问该对象的值
+            document.write(m.age,m.name);
+            document.write("</br>");
+           
+        }
+        document.write("</br>");
+        document.write("</br>");
+
+        for (const proName in window) {
+            document.write(proName);//遍历window的所有属性
+            document.write("</br>");
+                
+            }
+    </script>
+ 
+    
+</body>
+</html>

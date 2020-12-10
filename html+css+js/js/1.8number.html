@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number =new Number(99);//引用类型对象
+        console.log(typeof number);//object
+        let number2= 99;//这里是值类型，但是调用的时候系统会帮我们转换引用类型
+        console.log(typeof number2);
+
+        let number3 = 99.9993;
+        console.log(number3.toFixed(3));//保留3位小数
+
+        // NaN--》不是数字
+        let number4 = "45xcvvdofj";
+        console.log(parseInt(number4));//把字符串头部的整数取过来
+
+    </script>
+</body>
+</html>

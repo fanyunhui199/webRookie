@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const boolean=new Boolean(true);
+        console.log(boolean.valueOf());
+
+        let a = [];
+        let b =[1];
+        let c =[1,2,2];
+        console.log(typeof a);
+        console.log(a==true);
+        console.log(b==true);
+        console.log(c==true);
+        if(a){
+            console.log("if中是将a转换为Boolean类型，前面是比较")
+        }
+
+     
+        while(true){
+           const rela = prompt("boolean类型实例操作---请回答：JavaScript和Java是什么关系？").trim();
+            if(!rela) continue;
+            else{
+                console.log(rela=="没有关系" ? "回答正确" : "回答错误");
+                break;
+            }
+        }
+        
+        
+    </script>
+</body>
+</html>
