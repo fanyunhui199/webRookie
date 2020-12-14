@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let shop=[
+            {name:"苹果",money:2000},
+            {name:"三星",money:4000 },
+            {name:"华为",money:1000},
+            {name:"小米",money:2000}
+                 ]
+
+     let newshop=shop.sort(function(a,b){
+         return a.money - b.money;//从小到大b-a从大到小
+     })
+
+     console.log(newshop);
+
+    //实现原理就是不断遍历，两两相比实现条件后互换位置
+    let a = [1,5,2,4,2,9,6,0];
+    function mysort(array,callback){
+        for(const m in array){
+            for(const n in array){
+                if(callback(array[m],array[n])<0){
+                        let temp= array[m];
+                        array[m]=array[n];
+                        array[n]=temp;
+}
+            }
+        }
+       return array;
+       
+    }
+
+    console.log(mysort(a));
+    </script>
+</body>
+</html>

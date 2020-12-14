@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,5];
+        console.log(array.indexOf(4,1))//
+        //从第一个1开始查找有没有包含4的元素，并且返回下标
+        console.log(array.includes(2));//返回Boolean类型
+
+
+        //新增的find方法查找,会自动遍历整个数组
+        let res = array.find(function(item){
+            //写入查找条件
+            return item>4;//会输出查找到的第一个元素,没找到返回undefined
+        })
+        console.log(res);
+
+        //find()可以弥补include查找不了引用类型数组的缺点
+        
+        let array2 =[{name:"fyh"},{name:"hxx"},{name:"zhangyu"}];
+        let b=array2.find(function(item){
+            return item.name=="hxx";
+        })
+
+        console.log(b);
+
+
+        //自定义find方法的实现
+        function finds(arrays,target){
+            for(const item of arrays){
+                if(item===target){
+                    return item;
+                }
+            }
+            return undefined;
+        }
+   console.log(finds(array,2));
+
+    </script>
+</body>
+</html>
