@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //将一段文字拆分为数组
+        let array=["abc,abcd","def","ght","mxh"];
+        let str = "fanyunhui,hhhhh,lueluelue";
+        let a = ["hhh","aaa"];
+
+        let newstr=str.split(",");
+        console.log(newstr);//如果是对array的话没有这个方法，拆分成了两个数组
+
+        //将数组中的元素合并到一起
+        console.log(newstr.join("-"));
+
+        //将两个数组连接到一起
+        // let str2 = str.concat(array);
+        // console.log(typeof(str2));
+        // console.log(str2);//拼接为string类型
+
+        // let array2 = newstr.concat(array,a);
+        // console.log(array2);
+
+        //目前都是使用点语法
+        let array2=[...array,...a,...newstr];
+        console.log(array2);
+
+
+        //把数组中的内容复制到数组中其它位置
+        let hd = [1,2,3,4,5,6,7];
+        console.log(hd.copyWithin(3,5,7));//从0开始数，
+        //3,1,3：从1开始，到3（不包括3）==》23，到第三个元素的位置：4，5
+        //array.copyWithin(target, start, end)
+
+
+    </script>
+</body>
+</html>

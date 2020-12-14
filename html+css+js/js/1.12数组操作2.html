@@ -9,21 +9,36 @@
     <script>
         //往数组里弹出元素--pop弹出最后一个
         let array = ["fyh","hexx","zhangyu"];
-        let array1 = ["chenjin"];
-        let array2 = ["fyh","hexx","zhangyu"];
-        let a = array.pop();
-        console.log(a);
-        console.log(array);
+        // let array1 = ["chenjin"];
+        let array2 = [1,2,3,4,5];
+        let array3 = [1,2,3,4,5];
+        // let a = array.pop();
+        // console.log(a);
+        // console.log(array);
         
-        array2.shift();//从前面移出
-        console.log(array2);
+        // array2.shift();//从前面移出
+        // console.log(array2);
 
-        array1.unshift("在头插入");
-        console.log(array1);
+        // array1.unshift("在头插入");
+        // console.log(array1);
 
-        //splice，slice实现数组的增删改查
-        console.log(array.slice(1,2));//,"截取1到2的内容且不改变元素组"
+        // //splice，slice实现数组的增删改查
+        // console.log(array.slice(1,2));//,"截取1到2的内容且不改变元素组"
         
+
+        let b=array.splice(0,2);//截取
+        console.table(b);
+  
+        //插入,其实是替换
+        let c=array2.splice(2,1,"replace");
+        console.log(c);//取出来的其实是个数组
+        console.table(array2);//????为什么3.4都不见了
+//==》splice（index,howmany,item...)
+// *********index是一开始要操作的位置，howmany是删除操作的个数，item是插入的内容*********
+
+        let d=array3.splice(1,0,"new");
+        console.table(array3);
+
     </script>
 </body>
 </html>

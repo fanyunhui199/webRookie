@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+         /* 使用splice实现数组元素的换位 */
+         let Array = [1,2,3,4,5];
+         function Move(array,from,to){
+             if(from<0||to>array.lenth){
+                 return "参数错误";
+             }
+             const newArray=array;//or=[...array],利用新数组接收原来的数组，不要直接改变元素组
+             let item=newArray.splice(from,1);//注意，取出来的是数组
+             newArray.splice(to,0,...item);
+             return newArray;
+         }
+        
+        
+         console.log(Move(Array,prompt(),prompt()));
+    </script>
+</body>
+</html>
