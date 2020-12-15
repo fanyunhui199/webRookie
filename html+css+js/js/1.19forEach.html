@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+//         forEach(): 没有返回值，本质上等同于 for 循环，对每一项执行 function 函数。即map是返回一个新数组，原数组不变，forEach 是改变原数组。
+
+// 不支持 continue，用 return false 或 return true 代替。
+
+// 不支持 break，用 try catch/every/some 代替：
+
+// 实现 break：
+
+// try {
+//     var array = ["first","second","third","fourth"];        // 执行到第3次，结束循环
+//     array.forEach(function(item,index){
+//         if (item == "third") {
+//             throw new Error("EndIterative");
+//         }
+//         alert(item);// first,sencond
+//     }); 
+// } catch(e) { 
+//     if(e.message!="EndIterative") throw e; 
+// };
+// 实现 continue：
+
+// var arr = [1,2,3,4,5];
+// var num = 3;
+// arr.some(function(v){
+//     if(v == num) {
+//         return;  // 
+//     }
+//     console.log(v);
+// });
+// 实现 break：
+
+// var arr = [1,2,3,4,5]; 
+// var num = 3; 
+// arr.every(function(v){
+//     if(v == num) {
+//         return false;
+//     }else{ 
+//         console.log(v); 
+//         return true;
+//     }
+// });
+
+
+//循环遍历数组
+//实现continue
+let array = ["first","second","third","fourth"]; 
+let array2 =[1,2,3,4,5]
+let v = 3;
+array2.forEach(function(item){
+    if(item==v){
+        return false;
+        
+    }else{
+        console.log(item);
+        return true;
+    }
+    
+});//?????????/为什么我实现不了break
+
+
+    </script>
+</body>
+</html>

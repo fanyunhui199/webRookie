@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          let shop=[
+            {name:"苹果",money:2000},
+            {name:"三星",money:4000 },
+            {name:"华为",money:1000},
+            {name:"小米",money:2000}
+                 ] 
+
+            let a =[1,2,3,4,5];
+            //对这个数组其实操作的是对象{}，一个{}就是一个value
+          for(let value of shop){
+               value.name=`"shopping"${value.name}`;//获取value对象的属性
+          }
+          console.log(shop);//改变源数组
+
+          //对值类型的修改是不会改变的
+            for (let value of a) {
+                value = value++;
+            }
+            console.log(a);//还是原数组
+    </script>
+</body>
+</html>
