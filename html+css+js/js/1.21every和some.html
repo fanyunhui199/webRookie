@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="title">
+    <span></span>
+
+
+
+    <script>
+        //every用于判断整体情况比较好，返回值为Boolean类型
+        let shop=[
+            {name:"苹果",money:2000},
+            {name:"三星",money:4000 },
+            {name:"华为",money:1000},
+            {name:"小米",money:3000}
+                 ] 
+       const item = shop.every(function(items){
+                return items.money>=1000;
+        })
+       console.log(item);//true
+
+        //some任何有一个为真，返回真,全为假才是假
+        //Array<string>.some(predicate: (value: string, index: number, array: 
+
+        let keywords = ["php","js"];
+        let title = document.querySelector(`[name="title"]`);//找到元素
+        title.addEventListener("keyup",function(){//定义事件
+            const res = keywords.some( keyword =>{   //如果有关键词
+                return this.value.indexOf(keyword)!= -1;  //不为假
+            });
+            document.querySelector("span").innerHTML=res //如果为假
+            ?""
+            :"必须包含"+keywords.join(",")+"关键字"
+        });
+    </script>
+</body>
+</html>

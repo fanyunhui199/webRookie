@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //迭代器模式，提供一种方法顺序访问一个聚合对象中的各种元素，而又不暴露该对象的内部表示。
+        let array = ["first","second","third","fourth"]; 
+        let keys = array.keys();//keys(itretor方法)指的是索引
+        let values = array.values();
+
+
+        console.log(keys.next());//next()是对应索引的值
+        //done: false（是否遍历结束）  value: 0（下标）
+
+        console.log(values.next());//value是值
+        // done: false
+        // value: "first"
+        //  __proto__: Object
+
+        // 展开语法方法
+        let {value,done} = keys.next();
+        console.log(value,done);
+​
+    </script>
+</body>
+</html>

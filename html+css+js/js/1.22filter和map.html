@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let array = [1,2,3,4,5,6];
+        //Array<number>.filter(predicate: (value: number, index: number, array: number[])
+        let res = array.filter(function(item){  
+                return item>3;
+        })
+
+        console.log(res);
+
+        //map==>将元素组映射为新数组，array.map(function(currentValue, index, arr), thisIndex)
+        let res2 = array.map(function(item){
+            return item*item ;//必须要有返回值，不然映射为undefined，不改变原数组
+        })
+        console.log(res2);
+//当创建一个对象接收的时候元素组不会变，直接操作原数组会改变
+    </script>
+</body>
+</html>
