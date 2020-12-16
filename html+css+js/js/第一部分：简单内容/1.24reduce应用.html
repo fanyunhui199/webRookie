@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //通过使用参数item，pre等操作reduce的方法，你让他返回什么，他就返回什么
+
+
+    // 1、previousValue （上一次调用回调返回的值，或者是提供的初始值（initialValue））
+    // 2、currentValue （数组中当前被处理的元素）
+    // 3、index （当前元素在数组中的索引）
+    //4、array （调用 reduce 的数组）
+        //获取价格超过一万元的商品
+        let cart = [
+            {name : "iphone" ,price:12000},
+            {name : "imac",price:13000},
+            {name : "ipad",price : 8000}
+        ];
+        function getNameByPrice(array,price){
+            return array.reduce(function(arr,cur){//arr=pre[]
+                if(cur.price>price){
+                    arr.push(cur)
+                }
+                    return arr;
+            },[])
+            .map(function(item){
+                return item.name;//映射为商品的名字
+            })
+        }
+        console.log(getNameByPrice(cart,10000));
+
+        //数组去重
+        let arr1 = [1,2,3,4,2,3,5,6,1];
+        let newarr=arr1.reduce(function(arr,cur){
+            if(arr.includes(cur)===false){
+                arr.push(cur);
+            }
+            return arr;
+        },[]);
+        console.log(newarr);
+
+        //清楚重复商品
+        let cart2 = [
+            {name : "iphone" ,price:12000},
+            {name : "imac",price:13000},
+            {name : "ipad",price : 8000},
+            {name : "imac",price:13000},
+            {name : "ipad",price : 8000}
+        ];
+
+   
+        function findGoods(goods){
+      
+            return goods.reduce(function(arr,cur){//arr=pre[],cur当前被处理的元素
+                let finds = arr.find(function(v){//查看里面是否里面已经存在了这个商品
+                    return v.name == cur.name;//返回当前商品的名字
+                });
+                if(!finds) {
+                    arr.push(cur);//没有发现就把她放进去
+                }
+                    
+                return arr;
+               
+            },[]);
+        }
+        console.table(findGoods(cart2));
+    </script>
+</body>
+</html>

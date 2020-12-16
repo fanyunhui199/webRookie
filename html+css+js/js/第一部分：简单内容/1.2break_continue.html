@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 跳转标签 ：子层循环想退出内层循环的时候可以使用跳转标签-->
+    <script>
+        lable: for(let i=0;i<=10;i++)// 打了一个标签，在我看来，没有什么用嘿嘿嘿
+         for(let j=0;j<=10;i++){
+            if(j%2==0){
+                console.log(i,j);
+            }
+                if(j+i>10){
+                    break lable;
+                }
+         }
+         
+    </script>
+   
+    
+</body>
+</html>

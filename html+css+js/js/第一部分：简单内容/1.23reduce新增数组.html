@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+    // 1、previousValue （上一次调用回调返回的值，或者是提供的初始值（initialValue））
+    // 2、currentValue （数组中当前被处理的元素）
+    // 3、index （当前元素在数组中的索引）
+    //4、array （调用 reduce 的数组）
+
+        let arr = [1,2,3,4,5];
+        arr.reduce(function(pre,value,index,array){
+            //pre指的是这个函数的返回值，无初始值是下标为0的数，后面没有返回值为undefined，
+                console.log(pre,value,index);
+                
+        });
+
+        //可以给reduce传递初始值
+        arr.reduce(function(pre,value,index,array){
+            //pre指的是这个函数的返回值，无初始值是下标为0的数，后面没有返回值为undefined，
+                console.log(pre,value);
+                return 99;
+        },0);
+
+        //利用reduce可以统计某内容在数组中出现的次数，获取最大值等
+        let arr2 = [1,2,3,4,1,1];
+        function arraycount(array,item){//total=pre,寓意为出现次数
+            return array.reduce(function(total,items){
+                    total += items == 1?1:0;
+                    return total;
+            },0)
+        };
+        console.log("1出现的次数"+arraycount(arr2,1));
+
+        //获取元素中的最大值
+        let arr3 = [1,3,1,35,5,4,3];
+         function arrayMax(array){
+            arr3.reduce(function(pre,item){//每一次都会出现（pre，item）的组合
+               
+              return pre >item ? pre:item;
+       });
+        }
+
+        console.log(arrayMax(arr3));
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*//严格模式，防止全局污染等，严格纠错
+        //作用域从当前位置向下
+        "use strict";
+       let sex = prompt("请输入性别") || "保密";//获取键盘的输入值
+       console.log(sex);//逻辑或短路运算选择为真的条件（如果第一个为真则不判断第二个了)*/
+
+       /*三元表达式
+        let a = prompt("请输入你的年龄");
+       let b = a === 18 ? 'yes' : 'no';//为什么一直错，因为a=18是赋值运算。。。
+       alert(b);
+       */
+
+       /*switch语句的使用
+       1 顺序执行，遇到break终止，最后是default
+       */
+      
+      function message(age){
+          let msg='';
+          switch(true){//条件
+
+              case age>60:
+              msg="老年";
+              break;
+
+              case age>40:
+              msg="中年";
+              break;
+
+              case age>20:
+              msg="青年";
+              break;
+
+              case age>0:
+              msg="小朋友";
+              break;
+
+              
+          }
+          return msg;
+
+
+      }
+      let ages = prompt("请输入你的年龄");
+      alert(message(ages));
+
+
+    </script>
+</body>
+</html> 

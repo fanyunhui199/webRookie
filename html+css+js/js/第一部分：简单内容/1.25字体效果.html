@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        
+        body{
+            width: 100vh;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background:#34495e;
+        }
+
+        div{
+             font-size: 4em;
+             font-weight: bold;/*加粗 */
+            /* text-transform: uppercase;变成大写*/
+            color: #e7b13d;
+        }
+
+        div>span{
+            position: relative;
+            display: inline-block;
+
+        }
+
+        .color{
+                animation-name:color;
+                animation-duration: 1s;
+                animation-iteration-count: 2;
+                animation-timing-function: linear;
+                animation-direction: alternate;
+        }
+         @keyframes color {/*关键帧动画 */
+            50%{
+                color: #83cc0e;
+                transform: scale(2);
+                
+            }
+            to{
+                color: #3a61e2;
+                transform: scale(.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div>这是一个酷炫的字体效果</div>
+
+    <script>
+        const div = document.querySelector("div");//找到div
+        
+        [...div.textContent].reduce(function(pre,cur,index){//使用展开语法获取到div的每个字
+            pre ==index&&(div.innerHTML = "");//当回调为下标的时候，让HTML为空，把内容清空
+            let span = document.createElement("span");//追加一个span标签
+            span.innerHTML = cur;//将内容放进去
+            div.appendChild(span);//把span追加到div中
+            span.addEventListener("mouseover",function(){//添加鼠标移开事件
+                this.classList.add("color");
+            });
+            span.addEventListener("animationend",function(){
+                this.classList.remove("color");
+            });//监听动画结束
+        },0);//为零好确定下标
+       
+    </script>
+</body>
+</html>
