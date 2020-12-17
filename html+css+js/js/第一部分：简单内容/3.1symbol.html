@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //ES5 的对象属性名都是字符串，这容易造成属性名的冲突。比如，你使用了一个他人提供的对象，
+        //但又想为这个对象添加新的方法（mixin 模式），
+        //新方法的名字就有可能与现有方法产生冲突。如果有一种机制，
+        //保证每个属性的名字都是独一无二的就好了，这样就从根本上防止属性名的冲突。这就是 ES6 引入Symbol的原因。
+        //加上symbol后该变量变为唯一，并且不能往里面加属性，但是后面可以加描述
+
+        //ES6 引入了一种新的原始数据类型Symbol，表示独一无二的值。它是 JavaScript 语言的第七种数据类型，
+        //前六种是：undefined、null、布尔值（Boolean）、字符串（String）、数值（Number）、对象（Object）。
+
+        
+        // let a =Symbol("a");
+        // let b =Symbol("a");
+        // console.log(Symbol.keyFor(a));// undefined,这种声明方式会创建两个相同的symbol
+
+        let a = Symbol.for("aa");
+        let b =Symbol.for("aa");
+        console.log(Symbol.keyFor(a));//aa 这种方式的+for会重复引用第一次声明symbol的地址块
+    </script>
+</body>
+</html>
