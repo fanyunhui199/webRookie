@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let symbol=Symbol("第一个symbol");
+        let a = {name:"fyh",
+                 [symbol]:"daren"//要用[]裱起来
+    };
+        //symbol属性不能用forin/of遍历到，是私有属性
+        for (const key in a) {
+           console.log(key);//name
+        }
+        
+        //要想遍历symbol属性用这个
+        for (const key of Object.getOwnPropertySymbols(a)) {
+            console.log(key);
+        }
+
+        //遍历数组中的全部属性
+        let site = Symbol("这是一个Symbol");
+        class User{
+            constructor(name){//定义构造函数
+                this.name=name;
+                this[site]="后盾人";//必须要加【】
+            }
+           getName(){//定义一个getname方法返回想要的对象
+               return `${this.name} ${this[site]}`
+           }
+        }
+        let hd = new User("李四");
+        console.log(hd.getName());
+        for (const key in hd) {
+            console.log(key);
+        }
+    </script>
+</body>
+</html>
