@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let set = new Set(["abcd","efgh"]);
+        console.log(set);
+        console.log(Array.from(set));
+        console.log(...set);
+
+        //大于5的留下
+        let set1 = new Set("123456789");
+        let newset = Array.from(set1);
+         let a= newset.filter(function(items){
+          return items>=5;
+        });//必须定义一个参数接收这个过滤内容
+        set1=new Set(a);
+        console.log(set1);
+
+
+
+        //利用set数组去重
+        let array = [1,2,3,4,1,2,3,4];
+        let newarray = new Set(array);
+        console.log(newarray);
+        array = Array.from(newarray);
+        console.log(array);
+    </script>
+</body>
+</html>
