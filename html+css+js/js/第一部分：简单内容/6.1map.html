@@ -10,6 +10,51 @@
         //普通方法中的键名只能是字符串，map就不一样了
         // Map对象保存键/值对，是键/值对的集合。任何值(对象或者原始值) 都可以作为一个键或一个值。
         //Object结构提供了“字符串—值”的对应，Map结构提供了“值—值”的对应。
+        //百宝箱，啥都能装
+
+/*      let map = new Map([["van","浓汤"],["van2", "tang"]]);
+        console.log(map);
+
+        //map中的链式操作
+        map.set("name","van");
+        map.set("site","ting");
+        console.log(map);
+        console.log(map.values);
+        console.log(map.keys)
+*/
+
+  /*   //map查找
+        let obj = {
+            name: "van"
+        };
+        let map1 = new Map();
+        map1.set(obj,"汤");
+        console.log( map1);
+        console.log(map1.get(obj));
+        console.log(map1.has(obj)); //只能判断键名，不能判断值
+        // map1.delete(obj);
+        // map1.clear();//清空，无返回值
+
+        */
+
+        //   //map的遍历
+        let map = new Map([["van","浓汤"],["van2", "tang"]]);
+        for (const key of map.keys()) {
+            console.log(key);
+        }
+
+        for (const key of map.keys()) {
+            console.log(key);
+        }
+
+        for (const [key,value] of map.entries()) {//[key,value]是数组，使用展开语法获取
+            console.log(key,value);
+        }
+console.log("foreach");
+        map.forEach((value,key) => {
+         console.log(value,key);
+        });
+        
     </script>
 </body>
 </html>
