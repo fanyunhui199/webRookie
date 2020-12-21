@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let set1 = new Set([1,23,4,5,3]);
+        let set2 = new Set([1,2,6,7,8,9])
+        //并集
+
+        console.log(new Set([...set1,...set2]));
+        //差集
+        console.log(new Set(
+            [...set1].filter(function(item){//过滤出set2中没有，set1中有的
+                return !set2.has(item);
+            })
+        ));
+
+        //交集
+        console.log(new Set(
+            [...set1].filter(function(item){//过滤出set2中没有，set1中有的
+                return set2.has(item);
+            })
+        ));
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="hd">
+    <ul></ul>
+    <script>
+        let set = new Set(["abc","def","ghi"]);
+        console.log(set.entries());
+        // for (const value of set) {
+        //     console.log(value);
+        // }
+
+        // set.forEach(function(value,key,set){
+        //     console.log(set);
+        // });
+
+            //使用set搜索网页关键词
+           let obj = {//创建对象
+               data :new Set(),//创建set类型的数据
+               set keyword(word){ //获取输入框内容
+                   this.data.add(word);//往数据里添加关键词
+               },
+           show(){ //添加show方法
+                let ul = document.querySelector("ul")//添加ul事件
+                ul.innerHTML='';//将ul的内容置空
+                this.data.forEach(function(value){//遍历set中的内容进行打印
+                        ul.innerHTML+=`<li>${value}</li>`;
+                })
+              
+            }
+        };
+        let input = document.querySelector("[name= 'hd']");//绑定事件
+
+        input.addEventListener("blur",function(){
+            obj.keyword = this.value;
+            obj.show();
+        });
+    </script>
+</body>
+</html>
