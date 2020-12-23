@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <div name="van">hhhhhh</div>
+    <div name="javascript">yyyyyy</div> -->
+
+    <div>
+         接受协议：
+        <input type="checkbox" name="agreement" error="请接受协议">
+        我是学生：
+        <input type="checkbox" name="student" error="本网站只对学生开放">
+        <input type="submit">
+    </div>
+</body>
+<script>
+    /*
+    *let map = new Map();
+    //获取dom元素
+    document.querySelectorAll("div").forEach(item => {
+        map.set(item,{
+                content:item.getAttribute("name") 
+            });    
+            console.log(item);    
+    });
+    console.log(map);
+    //监听点击事件
+    map.forEach((config,elem)=>{
+        elem.addEventListener("click",()=>
+        alert(config.content));
+    });
+*/
+
+    //使用Map类型控制表单提交，只有同意了协议才能提交
+    function post(){
+        let map =new Map();
+        let inputs = document.querySelectorAll("[error]");//找到所有的error事件
+        inputs.forEach(item=>{
+        map.set(item,{
+            error: item.getAttribute("error"),
+            status: item.checked
+        });
+    });
+    console.log(map);
+    return false;
+    }
+
+</script>
+</html>
