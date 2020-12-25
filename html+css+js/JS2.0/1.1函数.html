@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //一等公民
+        //相当于一个盒子，盒子里面放的是要执行的代码
+
+
+        /*1声明式函数
+        只是声明，没有实际运行
+        2 赋值式函数
+        */
+        function fn1(){
+            console.log("这是一个函数");
+        }
+       
+
+       //赋值式
+       let fn2 = function(){
+           console.log("赋值式函数");
+       };//赋值式要加上引号
+
+       //函数的调用
+       fn1();
+       fn2();
+
+       console.log(fn1);//fn1是变量
+    </script>
+</body>
+</html>
