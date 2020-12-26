@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //问题一：引入模块的函数名与自定义以及两个不同模块间的函数名冲突
+        //解决办法：立即执行函数 (函数)();
+        function hh(){
+            console.log("我也不知道它啥时候执行");
+        }
+        hh();
+
+        (function hd(){
+            console.log("立即执行函数");
+        }) ();//不需要刻意调用，遇到了就直接执行
+        
+        console.log("----------------------------------");
+        
+        //问题2 但是放到里面就不属于全局了，如果要执行另外一个冲突名字的函数，还要更多
+
+        //问题2解决办法
+        
+    
+        (function (window){
+            function hh(){
+            console.log("我也不知道它啥时候执行");
+           }
+
+            function hd(){
+            console.log("立即执行函数");
+            }
+            //把两个方法封装到windows的js1里，模块化,只给给外部开放一个接口
+            window.js1 = {hd,hh};
+        }) (window);
+
+        js1.hd();//调用成功
+
+        //或者利用块作用域，使用赋值情况来声明函数
+        
+    </script>
+</body>
+</html>

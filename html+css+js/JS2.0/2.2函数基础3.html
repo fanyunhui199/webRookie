@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //建议把函数放到类里面，而不是单独使用
+        //匿名函数与函数提升：在声明函数（匿名函数）中，浏览器会预编译这个函数，
+        //不会报错。而赋值函数，要报错
+        
+
+        //使用reduce实现函数的统计一个数组的和
+        function sum(...args){
+            return args.reduce(function(a,b){
+                return (a+b);
+            } );
+        }
+        
+
+        let a=[1,2,3,4,5,6,7,8];
+        console.log(...a);
+        //console.log([...a]);展开语法没有【】，不然还是a数组
+        console.log(sum(...a));//要传入对应形式...a，传入a没有用
+        console.log(a.reduce());
+    </script>
+</body>
+</html>

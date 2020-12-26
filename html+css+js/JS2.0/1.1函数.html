@@ -9,15 +9,20 @@
     <script>
         //一等公民
         //相当于一个盒子，盒子里面放的是要执行的代码
+        //函也是一个对象，推荐使用声明式
 
 
         /*1声明式函数
         只是声明，没有实际运行
         2 赋值式函数
         */
+         fn1();
+         fn2();//赋值式函数在声明前调用会报错
+
+
         function fn1(){
-            console.log("这是一个函数");
-        }
+            console.log("这是一个声明函数");
+        }//声明式子不用分号
        
 
        //赋值式
@@ -30,6 +35,19 @@
        fn2();
 
        console.log(fn1);//fn1是变量
+
+        //函数封装
+        let user = {
+           name :null,
+           setUsername : function(name){
+               this.name=name;
+           },//使用匿名函数
+           getUsername:function(){
+               return this.name;
+           }
+       };
+       user.setUsername("van");
+       console.log(user.getUsername());
     </script>
 </body>
 </html>
