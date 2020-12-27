@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //默认参数的使用技巧，可以先设置一个形式参数的默认值，当需要传参的时候再传参
+
+        //例1：每年利润
+        function avg(money,year=1){
+            console.log(year);
+            return Math.round(money/year);
+        }
+
+        console.log(avg(1000,2));
+
+        console.log("----------------------");
+
+        //例2 数组排序，默认升序
+        function sortArray(array,type = "asc"){//升序
+            return array.sort(function(a,b){
+                return type =="asc" ? a-b : b-a;
+            })
+        }
+
+        console.log(...sortArray([1,3,41,2,9,4],"desc"));//降序
+
+
+        //商品打折,默认不打折，折上折扣为0
+        function sum(total,discount = 1,doublecount = 1){
+            return total*discount*doublecount;
+        }
+        console.log(sum(1000));
+        console.log(sum(1000,0.3));
+        console.log(sum(1000,0.3,0.3));//总价必须放前面，因为第一个必须传参
+
+    </script>
+</body>
+</html>

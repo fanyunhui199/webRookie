@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <button id="abc" >点我点我</button>
+   
+    <script>
+        //函数的参数可以是匿名函数，也可以是普通参数
+        //例子1
+        function fd(a){
+            return a<=5;
+        }
+
+        let array = [1,2,3,4,5,6,7,8];
+        console.log(array.filter(fd));
+
+        function events(){
+            alert(this.innerHTML);
+        }
+
+        //例子2
+        document.getElementById("abc").addEventListener("click",events);
+
+        console.log("-------------------------------");
+
+        /*arguments
+        传入的参数个数不确定的时候默认会有一个arguments数组接收传来的值
+        */
+        //例子1 老方法
+        function sum(){
+            let total = 0;
+            for(let i=0;i<arguments.length;i++) { 
+           
+                total+=arguments[i];
+            }
+            return total;
+        }
+        console.log(sum(1,3,4,5,6,7));
+
+
+        //new 方法 点语法（收集和释放）
+        function sum2(...args){
+            console.log(args);//通过点语法收集数字，组成数组，完成数组的操作
+            return args.reduce( (a,b)=> a + b);
+        }
+        console.log(sum2(1,3,4,5,6,7));
+    </script>
+</body>
+</html>

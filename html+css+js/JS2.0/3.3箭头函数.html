@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     
+        /*箭头函数*/
+//例子1
+        let hd = function (){
+            return 3;
+        };
+
+        let hd2 = ()=>{
+            return 3;
+        };//()表示要传递的参数
+   
+//例子2
+        let a = [1,2,3,4,5,6].filter(function(value,index){
+            return value<=3;
+        });
+        console.log(a);
+
+        //优化一：使用箭头函数，删掉function
+        // let b = [1,2,3,4,5,6].filter((value,index)=>{
+        //     return value<=3;
+        // });
+        // console.log(b);
+
+        //优化2
+        // let a = [1,2,3,4,5,6].filter(value=>{
+        //     return value<=3;
+        // });
+        // console.log(a);
+
+        //优化3 只有一行，可以直接省去return和括号
+        let b = [1,2,3,4,5,6].filter(value=> value<=3
+        );
+        console.log(b);
+
+
+        //例子2 计算数组和
+        let sum = [1,2,3,4,5,6].reduce((a,b) => a + b );
+        console.log(sum);
+
+
+        //考虑到this和递归之类的不太适合箭头函数，适合简单场景
+    </script>
+</body>
+</html>
