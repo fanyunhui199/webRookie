@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       function star(sum){
+           if(sum==0){
+             return "";
+           }   
+           document.write("*".repeat(sum)+"</br>");
+           let a = --sum;
+           console.log(a);
+               star(a);
+               //？？？sum--和--sum的输出不太一样欸
+
+               //我觉得可能是他识别不出sum--
+        
+       }
+       let x = 5 ;
+       console.log(x--);//果然识别不出来；
+       star(5);
+
+
+
+       //递归附加参数使用技巧
+    </script>
+</body>
+</html>
