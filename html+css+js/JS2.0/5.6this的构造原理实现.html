@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //this是可以被改变的，通过调用call函数
+        function User(name){
+            this.name = name;//构造name
+        }
+        let user = new User("van");
+        console.log(user.name);
+        let hd = {url:"www.baidu.com"};
+        User.call(hd,"van2");//把van值传给User的name，hd作为this传递给User
+        console.log(hd);//通过call给hd增加了一个name属性。。
+    </script>
+</body>
+</html>

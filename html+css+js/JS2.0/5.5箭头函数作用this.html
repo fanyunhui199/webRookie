@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //把函数转换成箭头函数之后this指向的就是上下文了，就是父级作用域中的this
+        let hh = {
+    name:"van",
+    site : ["123","nong","tang"],
+    show : function(){
+        console.log(this.name );
+        const self = this;//这里的this是hh对象 
+       return this.site.map(function(value){
+           
+           return `${self.name}-${value}`;//老方法，使用self获取上面的this对象
+       })
+    }
+};
+console.table(hh.show());
+let hd = {
+name:"van",
+    site : ["123","nong","tang"],
+    show : function(){
+     
+       return this.site.map(value=>
+
+            //把函数转换成箭头函数之后this指向的就是上下文了，就是父级作用域中的this
+           `${this.name}-${value}`);
+      
+    }
+};
+console.table(hd.show());
+
+    </script>
+</body>
+</html>

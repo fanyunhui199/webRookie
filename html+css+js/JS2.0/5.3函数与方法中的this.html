@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*/this是使用在作用域内部的关键字（不用声明），大部分情况在函数内部使用
+        //在全局内部使用的时候指的是window
+        //在函数内使用，不管函数在哪里定义，怎么定义，只管函数怎么调用的（箭头函数除外）
+        1 直接调用--》函数名（）
+        2 对象调用==》xxx.函数名（）math.random
+        3 定时器处理函数
+
+
+        类方法this是作用域下的函数
+
+*/
+
+//特殊变量的加入引入this
+//例子1 打印
+let hh = {
+    name:"van",
+    site : ["123","nong","tang"],
+    show : function(){
+       return this.site.map(function(value){
+           
+           return `${this.name}-${value}`;
+       },this)//map函数可以传入show的this，所以在函数里面使用的this是外边的
+    }
+};
+console.table(hh.show());
+    </script>
+</body>
+</html>
